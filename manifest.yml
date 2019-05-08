@@ -3,7 +3,7 @@ applications:
 - name: pal-tracker
   path: build/libs/pal-tracker.jar
   routes:
-  - route: pal-tracker-pietro-sampsonite.apps.chicken.pal.pivotal.io
+  - route: pal-tracker-mm.cfapps.io
   services:
   - tracker-database
   env:

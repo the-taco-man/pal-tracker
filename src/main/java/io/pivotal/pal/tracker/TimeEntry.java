@@ -2,6 +2,9 @@ package io.pivotal.pal.tracker;
 
 
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -12,6 +15,29 @@ public class TimeEntry {
     private LocalDate date;
     private int i;
     private int hours;
+
+    public TimeEntry() {
+
+    }
+
+    public TimeEntry(long projectId, long userId, LocalDate parse, int i) {
+        this.projectId = projectId;
+        this.userId = userId;
+        date = parse;
+        this.hours = i;
+    }
+
+    public TimeEntry(long timeEntryId, long projectId, long userId, LocalDate parse, int i) {
+        id = timeEntryId;
+        this.projectId = projectId;
+        this.userId = userId;
+        date = parse;
+        this.hours = i;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
 
     public long getProjectId() {
         return projectId;
@@ -51,29 +77,6 @@ public class TimeEntry {
 
     public void setHours(int hours) {
         this.hours = hours;
-    }
-
-    public TimeEntry() {
-
-    }
-
-    public TimeEntry(long projectId, long userId, LocalDate parse, int i) {
-        this.projectId = projectId;
-        this.userId = userId;
-        date = parse;
-        this.hours = i;
-    }
-
-    public TimeEntry(long timeEntryId, long projectId, long userId, LocalDate parse, int i) {
-        id = timeEntryId;
-        this.projectId = projectId;
-        this.userId = userId;
-        date = parse;
-        this.hours = i;
-    }
-
-    public Long getId() {
-        return this.id;
     }
 
     @Override
